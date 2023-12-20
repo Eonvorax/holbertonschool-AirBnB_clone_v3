@@ -75,10 +75,7 @@ class FileStorage:
         """
         obj_name = f"{str(cls.__name__)}.{id}"
 
-        if obj_name not in self.__objects:
-            return None
-
-        return self.__objects[obj_name]
+        return self.__objects.get(obj_name)
 
     def count(self, cls=None):
         """
